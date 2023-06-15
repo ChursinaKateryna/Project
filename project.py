@@ -49,3 +49,9 @@ def read_xml_file(file_path):
         print(f"Błąd parsowania pliku XML: {e}")
         return None
 
+def write_xml_file(data, file_path):
+    root = ET.Element("root")
+    root.append(data)
+    tree = ET.ElementTree(root)
+    tree.write(file_path, encoding='utf-8', xml_declaration=True)
+    print("Dane zapisane do pliku XML.")
